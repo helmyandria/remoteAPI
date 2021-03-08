@@ -1,0 +1,10 @@
+/Users/redyarmans/IdeaProjects/remoteAPI/src/main/java/id/pelindo/remote/controller/TagihanListrikController.java
+/Users/redyarmans/IdeaProjects/remoteAPI/src/main/java/id/pelindo/remote/controller/AkunController.java
+/Users/redyarmans/IdeaProjects/remoteAPI/src/main/java/id/pelindo/remote/Application.java
+/Users/redyarmans/IdeaProjects/remoteAPI/src/main/java/id/pelindo/remote/exception/ResourceNotFoundException.java
+/Users/redyarmans/IdeaProjects/remoteAPI/src/main/java/id/pelindo/remote/model/Akun.java
+/Users/redyarmans/IdeaProjects/remoteAPI/src/main/java/id/pelindo/remote/model/TagihanListrik.java
+/Users/redyarmans/IdeaProjects/remoteAPI/src/main/java/id/pelindo/remote/repository/TagihanListrikRepository.java
+/Users/redyarmans/IdeaProjects/remoteAPI/src/main/java/id/pelindo/remote/repository/AkunRepository.java
+/Users/redyarmans/IdeaProjects/remoteAPI/src/main/java/id/pelindo/remote/exception/GlobalExceptionHandler.java
+/Users/redyarmans/IdeaProjects/remoteAPI/src/main/java/id/pelindo/remote/exception/ErrorDetails.java

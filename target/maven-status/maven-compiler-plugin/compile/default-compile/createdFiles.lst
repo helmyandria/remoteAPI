@@ -1,0 +1,10 @@
+id/pelindo/remote/repository/AkunRepository.class
+id/pelindo/remote/controller/TagihanListrikController.class
+id/pelindo/remote/exception/ErrorDetails.class
+id/pelindo/remote/exception/GlobalExceptionHandler.class
+id/pelindo/remote/model/Akun.class
+id/pelindo/remote/model/TagihanListrik.class
+id/pelindo/remote/exception/ResourceNotFoundException.class
+id/pelindo/remote/controller/AkunController.class
+id/pelindo/remote/Application.class
+id/pelindo/remote/repository/TagihanListrikRepository.class

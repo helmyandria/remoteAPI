@@ -1,15 +1,12 @@
 package id.pelindo.remote.model;
 
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import javax.persistence.Id;
+import java.util.List;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Objects;
+public class ResponseTagihanListrik {
 
-@Entity
-@EntityListeners(AuditingEntityListener.class)
-public class TagihanListrik implements Serializable {
-
+    private String messageCode;
+    private String messageDesc;
     private String price_type;
     private String meter_to;
     private String meter_from;
@@ -19,6 +16,39 @@ public class TagihanListrik implements Serializable {
     private String period;
     private String installation_code;
     private Long id;
+    private List<TagihanListrik> listTagihanListrik;
+
+    public ResponseTagihanListrik(String messageCode, String messageDesc) {
+        super();
+        this.messageCode = messageCode;
+        this.messageDesc = messageDesc;
+    }
+
+    public ResponseTagihanListrik(String messageCode, String messageDesc, List<TagihanListrik> list) {
+        this.messageCode = messageCode;
+        this.messageDesc = messageDesc;
+        this.listTagihanListrik = list;
+    }
+
+    public List<TagihanListrik> getListTagihanListrik() {
+        return listTagihanListrik;
+    }
+
+    public String getMessageCode() {
+        return messageCode;
+    }
+
+    public void setMessageCode(String messageCode) {
+        this.messageCode = messageCode;
+    }
+
+    public String getMessageDesc() {
+        return messageDesc;
+    }
+
+    public void setMessageDesc(String messageDesc) {
+        this.messageDesc = messageDesc;
+    }
 
     public String getInstallation_code() {
         return installation_code;
@@ -36,7 +66,6 @@ public class TagihanListrik implements Serializable {
         this.period = period;
     }
 
-    @Id
     public String getPrice_type() {
         return price_type;
     }
@@ -89,35 +118,8 @@ public class TagihanListrik implements Serializable {
         this.id = id;
     }
 
+    @Id
     public Long getId() {
         return id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        TagihanListrik that = (TagihanListrik) o;
-        return Objects.equals(price_type, that.price_type) && Objects.equals(meter_to, that.meter_to) && Objects.equals(meter_from, that.meter_from) && Objects.equals(ppju, that.ppju) && Objects.equals(tariff, that.tariff) && Objects.equals(amount, that.amount) && Objects.equals(period, that.period) && Objects.equals(installation_code, that.installation_code) && Objects.equals(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(price_type, meter_to, meter_from, ppju, tariff, amount, period, installation_code, id);
-    }
-
-    @Override
-    public String toString() {
-        return "TagihanListrik{" +
-                "price_type='" + price_type + '\'' +
-                ", meter_to='" + meter_to + '\'' +
-                ", meter_from='" + meter_from + '\'' +
-                ", ppju='" + ppju + '\'' +
-                ", tariff='" + tariff + '\'' +
-                ", amount='" + amount + '\'' +
-                ", period='" + period + '\'' +
-                ", installation_code='" + installation_code + '\'' +
-                ", id=" + id +
-                '}';
     }
 }

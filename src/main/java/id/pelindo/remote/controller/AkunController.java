@@ -2,12 +2,14 @@ package id.pelindo.remote.controller;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import id.pelindo.remote.model.Akun;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import id.pelindo.remote.repository.AkunRepository;
+import id.pelindo.remote.model.ResponseAkun;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -20,5 +22,33 @@ public class AkunController {
     public List<Akun> getAllAkun() {
         return akunRepository.findAll();
     }
+
+    @PostMapping("/akun")
+    public ResponseEntity<ResponseAkun> getLogin(@Valid @RequestBody Akun akun) {
+        Akun findAkun = akunRepository.findLoginByUsernameAndPassword(akun.getUsername(), akun.getPassword());
+
+        ResponseAkun pesan = null;
+        if (findAkun != null) {
+            pesan = new ResponseAkun("00", "Data ditemukan", findAkun.getUsername(), findAkun.getRole());
+        } else {
+            pesan = new ResponseAkun("06", "Data tidak ditemukan", "", "");
+        }
+
+        return ResponseEntity.ok().body(pesan);
+    }
+
+//    @GetMapping("/akunwithparam/{username}")
+//    public ResponseEntity<MessageDTO> getLoginPost(@PathVariable(value = "username") String username) {
+//        Akun akun = akunRepository.findLoginByUsernameAndPassword(username);
+//
+//        MessageDTO message = null;
+//        if (akun != null) {
+//            message = new MessageDTO("00", "Data ditemukan");
+//        } else {
+//            message = new MessageDTO("06", "Data tidak ditemukan");
+//        }
+//
+//        return ResponseEntity.ok().body(message);
+//    }
 
 }

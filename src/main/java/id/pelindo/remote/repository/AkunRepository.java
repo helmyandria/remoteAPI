@@ -12,6 +12,7 @@ import java.util.Optional;
 @Repository
 public interface AkunRepository extends JpaRepository<Akun, String> {
 
-    @Query(value = "select * from mobile_akun where username = :username and password = :password", nativeQuery = true)
-    Akun findLoginByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
+    @Query(value = "SELECT ma.USERNAME, ma.PASSWORD, ma.ROLE,psi.CUSTOMER_NAME, psi.INSTALLATION_CODE, psi.INSTALLATION_ADDRESS, psi.INSTALLATION_TYPE, psi.POWER_CAPACITY FROM PROP_SERVICES_INSTALLATION psi JOIN MOBILE_AKUN ma ON psi.CUSTOMER_ID = ma.CUSTOMER_ID WHERE ma.USERNAME=:username AND ma.PASSWORD=:password", nativeQuery = true)
+    List<Akun> findLoginByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
+
 }

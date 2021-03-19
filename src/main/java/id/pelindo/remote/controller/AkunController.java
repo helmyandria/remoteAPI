@@ -18,20 +18,17 @@ public class AkunController {
     @Autowired
     private AkunRepository akunRepository;
 
-    @GetMapping("/akun")
-    public List<Akun> getAllAkun() {
-        return akunRepository.findAll();
-    }
-
     @PostMapping("/akun")
     public ResponseEntity<ResponseAkun> getLogin(@Valid @RequestBody Akun akun) {
-        Akun findAkun = akunRepository.findLoginByUsernameAndPassword(akun.getUsername(), akun.getPassword());
+        List<Akun> findAkuns = akunRepository.findLoginByUsernameAndPassword(akun.getUsername(), akun.getPassword());
+
+        System.out.println("value findAkuns : "+findAkuns);
 
         ResponseAkun pesan = null;
-        if (findAkun != null) {
-            pesan = new ResponseAkun("00", "Data ditemukan", findAkun.getUsername(), findAkun.getRole());
-        } else {
-            pesan = new ResponseAkun("06", "Data tidak ditemukan", "", "");
+        if (findAkuns.size() != 0) {
+            pesan = new ResponseAkun("00", "Data ditemukan", findAkuns);
+        } else if (findAkuns.size() == 0) {
+            pesan = new ResponseAkun("06", "Data tidak ditemukan");
         }
 
         return ResponseEntity.ok().body(pesan);

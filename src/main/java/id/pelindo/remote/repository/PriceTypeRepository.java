@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface PriceTypeRepository extends JpaRepository<PriceType, String> {
 
-    @Query(value = "SELECT * FROM PROP_SERVICES_INSTALLATION_P WHERE INSTALLATION_CODE = :installation_code", nativeQuery = true)
+    @Query(value = "SELECT * FROM PROP_SERVICES_TRANSACTION_D WHERE ID = (SELECT MAX(ID) FROM PROP_SERVICES_TRANSACTION_D WHERE INSTALLATION_CODE= :installation_code AND PRICE_TYPE  = 'KVARH') or ID = (SELECT MAX(ID) FROM PROP_SERVICES_TRANSACTION_D WHERE INSTALLATION_CODE= :installation_code AND PRICE_TYPE  = 'WBP') or ID = (SELECT MAX(ID) FROM PROP_SERVICES_TRANSACTION_D WHERE INSTALLATION_CODE= :installation_code AND PRICE_TYPE  = 'LWBP') or ID = (SELECT MAX(ID) FROM PROP_SERVICES_TRANSACTION_D WHERE INSTALLATION_CODE= :installation_code AND PRICE_TYPE  = 'BLOK1') or ID = (SELECT MAX(ID) FROM PROP_SERVICES_TRANSACTION_D WHERE INSTALLATION_CODE= :installation_code AND PRICE_TYPE  = 'BLOK2')  ", nativeQuery = true)
     List<PriceType> getPriceType(@Param("installation_code") String installation_code);
 
 }

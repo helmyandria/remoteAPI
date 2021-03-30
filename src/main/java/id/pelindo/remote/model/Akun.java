@@ -12,11 +12,20 @@ public class Akun {
     private String username;
     private String password;
     private String role;
+    private String id;
     private String customer_name;
     private String installation_code;
     private String installation_address;
     private String installation_type;
     private String power_capacity;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public Akun() {
     }

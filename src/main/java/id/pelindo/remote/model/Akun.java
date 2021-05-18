@@ -18,6 +18,42 @@ public class Akun {
     private String installation_address;
     private String installation_type;
     private String power_capacity;
+    private String branch_id;
+    private String profit_center;
+    private String installation_number;
+    private String multiply_fact;
+
+    public String getBranch_id() {
+        return branch_id;
+    }
+
+    public void setBranch_id(String branch_id) {
+        this.branch_id = branch_id;
+    }
+
+    public String getProfit_center() {
+        return profit_center;
+    }
+
+    public void setProfit_center(String profit_center) {
+        this.profit_center = profit_center;
+    }
+
+    public String getInstallation_number() {
+        return installation_number;
+    }
+
+    public void setInstallation_number(String installation_number) {
+        this.installation_number = installation_number;
+    }
+
+    public String getMultiply_fact() {
+        return multiply_fact;
+    }
+
+    public void setMultiply_fact(String multiply_fact) {
+        this.multiply_fact = multiply_fact;
+    }
 
     public String getId() {
         return id;

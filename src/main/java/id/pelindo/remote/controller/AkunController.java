@@ -34,18 +34,4 @@ public class AkunController {
         return ResponseEntity.ok().body(pesan);
     }
 
-//    @GetMapping("/akunwithparam/{username}")
-//    public ResponseEntity<MessageDTO> getLoginPost(@PathVariable(value = "username") String username) {
-//        Akun akun = akunRepository.findLoginByUsernameAndPassword(username);
-//
-//        MessageDTO message = null;
-//        if (akun != null) {
-//            message = new MessageDTO("00", "Data ditemukan");
-//        } else {
-//            message = new MessageDTO("06", "Data tidak ditemukan");
-//        }
-//
-//        return ResponseEntity.ok().body(message);
-//    }
-
 }

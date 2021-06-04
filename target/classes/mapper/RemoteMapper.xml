@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="id.pelindo.remote.mapper.RemoteMapper">
+
+<!--    <select id="generateNomor" resultType="String">-->
+<!--        SET SERVEROUTPUT ON format wrapped;-->
+<!--        DECLARE-->
+<!--            result varchar(10);-->
+<!--        BEGIN-->
+<!--            result:=  REMOTE.GENERATE_NOMOR_TRANS('1','TRANS_LISTRIK','43',6);-->
+<!--            dbms_output.put_line(result);-->
+<!--        END;-->
+<!--    </select>-->
+
+<!--    select GENERATE_NOMOR_TRANS('1', 'TRANS_LISTRIK', '43', 6) from dual-->
+
+    <!--    <insert id="prop_services_transaction" parameterType="ServicesTransaction">-->
+    <!--        insert into "PROP_SERVICES_TRANSACTION" (-->
+    <!--            "ID",-->
+    <!--            "INSTALLATION_TYPE"-->
+    <!--            )-->
+    <!--        VALUES-->
+    <!--            (-->
+    <!--             #{id},-->
+    <!--             #{installation_type}-->
+    <!--            )-->
+    <!--    </insert>-->
+
+<!--        <insert id="prop_services_transaction_c" parameterType="ServicesTransactionC">-->
+<!--            insert into "PROP_SERVICES_TRANSACTION_C" (-->
+<!--                "DESCRIPTION",-->
+<!--                "PERCENTAGE",-->
+<!--                "SERVICES_TRANSACTION_ID",-->
+<!--                "BRANCH_ID"-->
+<!--            )-->
+<!--            VALUES-->
+<!--            (-->
+<!--                #{description},-->
+<!--                #{percentage},-->
+<!--                #{services_transaction_id},-->
+<!--                #{branch_id}-->
+<!--            )-->
+<!--        </insert>-->
+
+    <!--    <insert id="prop_services_transaction_d" parameterType="ServicesTransaction">-->
+    <!--        insert into "PROP_SERVICES_TRANSACTION_D" (-->
+    <!--            "SERVICES_TRANSACTION_ID",-->
+    <!--            "PRICE_TYPE",-->
+    <!--            "PRICE_CODE",-->
+    <!--            "TARIFF",-->
+    <!--            "METER_FROM",-->
+    <!--            "METER_TO",-->
+    <!--            "USED",-->
+    <!--            "MULTIPLY",-->
+    <!--            "BRANCH_ID",-->
+    <!--            "INSTALLATION_CODE"-->
+    <!--        ),-->
+    <!--        VALUES-->
+    <!--        (-->
+    <!--            #{services_transcation_id},-->
+    <!--            #{price_type},-->
+    <!--            #{price_code},-->
+    <!--            #{tariff},-->
+    <!--            #{meter_from},-->
+    <!--            #{meter_to},-->
+    <!--            #{used},-->
+    <!--            #{multiply},-->
+    <!--            #{branch_id},-->
+    <!--            #{installation_code}-->
+    <!--        )-->
+    <!--    </insert>-->
+
+</mapper>

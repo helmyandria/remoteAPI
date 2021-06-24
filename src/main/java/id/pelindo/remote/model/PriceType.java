@@ -16,9 +16,9 @@ public class PriceType implements Serializable {
     private String installation_code;
     private String price_type;
     private String price_code;
-    private String tariff;
+    private String max_range_used;
     private String meter_to;
-//    private String max_range_used;
+    private String tariff;
 
     public String getMeter_to() {
         return meter_to;
@@ -69,13 +69,13 @@ public class PriceType implements Serializable {
         this.price_code = price_code;
     }
 
-//    public String getMax_range_used() {
-//        return max_range_used;
-//    }
-//
-//    public void setMax_range_used(String max_range_used) {
-//        this.max_range_used = max_range_used;
-//    }
+    public String getMax_range_used() {
+        return max_range_used;
+    }
+
+    public void setMax_range_used(String max_range_used) {
+        this.max_range_used = max_range_used;
+    }
 
     public String getInstallation_code() {
         return installation_code;

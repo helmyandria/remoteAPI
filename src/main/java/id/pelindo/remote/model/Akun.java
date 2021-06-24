@@ -13,6 +13,7 @@ public class Akun {
     private String password;
     private String role;
     private String id;
+    private String customer_id;
     private String customer_name;
     private String installation_code;
     private String installation_address;
@@ -23,36 +24,44 @@ public class Akun {
     private String installation_number;
     private String multiply_fact;
 
-    public String getBranch_id() {
-        return branch_id;
+    private String minimum_used;
+    private String biaya_admin;
+    private String biaya_beban;
+    private String minimum_payment;
+
+    public Akun() {
     }
 
-    public void setBranch_id(String branch_id) {
-        this.branch_id = branch_id;
+    public Akun(String role, String customer_name) {
+        this.role = role;
+        this.customer_name = customer_name;
     }
 
-    public String getProfit_center() {
-        return profit_center;
+    @Column(name = "username", nullable = false)
+    public String getUsername() {
+        return username;
     }
 
-    public void setProfit_center(String profit_center) {
-        this.profit_center = profit_center;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getInstallation_number() {
-        return installation_number;
+    @Column(name = "password", nullable = false)
+    public String getPassword() {
+        return password;
     }
 
-    public void setInstallation_number(String installation_number) {
-        this.installation_number = installation_number;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getMultiply_fact() {
-        return multiply_fact;
+    @Column(name = "role", nullable = false)
+    public String getRole() {
+        return role;
     }
 
-    public void setMultiply_fact(String multiply_fact) {
-        this.multiply_fact = multiply_fact;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getId() {
@@ -63,11 +72,19 @@ public class Akun {
         this.id = id;
     }
 
-    public Akun() {
+    public String getCustomer_id() {
+        return customer_id;
     }
 
-    public Akun(String role, String customer_name) {
-        this.role = role;
+    public void setCustomer_id(String customer_id) {
+        this.customer_id = customer_id;
+    }
+
+    public String getCustomer_name() {
+        return customer_name;
+    }
+
+    public void setCustomer_name(String customer_name) {
         this.customer_name = customer_name;
     }
 
@@ -104,39 +121,67 @@ public class Akun {
         this.power_capacity = power_capacity;
     }
 
-    @Column(name = "username", nullable = false)
-    public String getUsername() {
-        return username;
+    public String getBranch_id() {
+        return branch_id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setBranch_id(String branch_id) {
+        this.branch_id = branch_id;
     }
 
-    @Column(name = "password", nullable = false)
-    public String getPassword() {
-        return password;
+    public String getProfit_center() {
+        return profit_center;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setProfit_center(String profit_center) {
+        this.profit_center = profit_center;
     }
 
-    @Column(name = "role", nullable = false)
-    public String getRole() {
-        return role;
+    public String getInstallation_number() {
+        return installation_number;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setInstallation_number(String installation_number) {
+        this.installation_number = installation_number;
     }
 
-    public String getCustomer_name() {
-        return customer_name;
+    public String getMultiply_fact() {
+        return multiply_fact;
     }
 
-    public void setCustomer_name(String customer_name) {
-        this.customer_name = customer_name;
+    public void setMultiply_fact(String multiply_fact) {
+        this.multiply_fact = multiply_fact;
     }
 
+    public String getMinimum_used() {
+        return minimum_used;
+    }
+
+    public void setMinimum_used(String minimum_used) {
+        this.minimum_used = minimum_used;
+    }
+
+    public String getBiaya_admin() {
+        return biaya_admin;
+    }
+
+    public void setBiaya_admin(String biaya_admin) {
+        this.biaya_admin = biaya_admin;
+    }
+
+    public String getBiaya_beban() {
+        return biaya_beban;
+    }
+
+    public void setBiaya_beban(String biaya_beban) {
+        this.biaya_beban = biaya_beban;
+    }
+
+    public String getMinimum_payment() {
+        return minimum_payment;
+    }
+
+    public void setMinimum_payment(String minimum_payment) {
+        this.minimum_payment = minimum_payment;
+    }
 }

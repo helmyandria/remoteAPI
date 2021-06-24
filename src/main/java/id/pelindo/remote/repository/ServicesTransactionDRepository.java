@@ -14,9 +14,9 @@ public interface ServicesTransactionDRepository extends JpaRepository<ServicesTr
 
     @Modifying
     @Query(value = "INSERT INTO PROP_SERVICES_TRANSACTION_D (SERVICES_TRANSACTION_ID, PRICE_TYPE, PRICE_CODE, TARIFF, METER_FROM, " +
-            "METER_TO, USED, MULTIPLY, BRANCH_ID, INSTALLATION_CODE, KETERANGAN) " +
+            "METER_TO, USED, MULTIPLY, BRANCH_ID, INSTALLATION_CODE, KETERANGAN, URL_FOTO) " +
             "VALUES (:services_transaction_id, :price_type, :price_code ,:tariff, :meter_from, " +
-            ":meter_to, :used, :multiply, :branch_id, :installation_code, :keterangan ) ", nativeQuery = true)
+            ":meter_to, :used, :multiply, :branch_id, :installation_code, :keterangan, :url_foto ) ", nativeQuery = true)
     @Transactional
     void insertData(
             @Param("services_transaction_id") String services_transaction_id,
@@ -29,6 +29,7 @@ public interface ServicesTransactionDRepository extends JpaRepository<ServicesTr
             @Param("multiply") String multiply,
             @Param("branch_id") String branch_id,
             @Param("installation_code") String installation_code,
-            @Param("keterangan") String keterangan
+            @Param("keterangan") String keterangan,
+            @Param("url_foto") String url_foto
     );
 }
